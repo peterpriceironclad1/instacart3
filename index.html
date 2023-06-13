@@ -193,7 +193,14 @@
             window.location.replace('https://www.instacart.com/store');
         })
   
-   var custom_data = {};
+   var custom_data = {
+    counterpartyName: "Ironclad Grocers",
+    counterpartyAddress: "71 Stevenson Street, San Francisco, CA 94105",
+    counterpartySignerEmail: "ed.achziger@ironcladhq.com"
+    website: "ironcladapp.com",
+    operatingHours: "9:00am-5:00pm PDT",
+    specificBrands: "Ironclad Gourmet",
+   };
     
     $(".custom-data").change(function(){
       console.log(this.id);
@@ -202,6 +209,7 @@
       _ps("send", "updated");
   
     });
+
 
 
       _ps("create", "79db65c7-db4b-4bfb-b8bb-89b3c3202e65");
