@@ -191,29 +191,31 @@
             e.preventDefault();
 
             window.location.replace('https://www.instacart.com/store');
-        })
+        });
   
-   var custom_data = {
+var render_data = {
     counterpartyName: "Ironclad Grocers",
     counterpartyAddress: "71 Stevenson Street, San Francisco, CA 94105",
-    counterpartySignerEmail: "ed.achziger@ironcladhq.com"
     website: "ironcladapp.com",
     operatingHours: "9:00am-5:00pm PDT",
     specificBrands: "Ironclad Gourmet",
-   };
-    
-    $(".custom-data").change(function(){
-      console.log(this.id);
-      custom_data[this.id] = this.value;
-      _ps('set', 'custom_data', custom_data );
-      _ps("send", "updated");
-  
-    });
+};
 
+var custom_data = {
+    counterpartyName: "Ironclad Grocers",
+    counterpartyAddress: "71 Stevenson Street, San Francisco, CA 94105",
+    website: "ironcladapp.com",
+    operatingHours: "9:00am-5:00pm PDT",
+    specificBrands: "Ironclad Gourmet",
+};
 
+_ps("create", "79db65c7-db4b-4bfb-b8bb-89b3c3202e65", {dynamic: true });
 
-      _ps("create", "79db65c7-db4b-4bfb-b8bb-89b3c3202e65");
-      _ps("load", "embedded-wtv6nz4e", { container_selector: "contracts", signer_id_selector: "email" });
+_ps('set', 'signer_id', 'ed.achziger@ironcladhq.com' );
+
+_ps("send", "updated", { custom_data: custom_data });
+
+_ps('load', 'embedded-wtv6nz4e', { container_selector: "contracts", render_data: render_data });
  
 
                     </script>
