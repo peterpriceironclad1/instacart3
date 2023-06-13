@@ -154,7 +154,7 @@
         <div class="w-full lg:max-w-7xl m-auto pt-20 sm:pt-0 lg:max-w-full">
             <div class="jobs-hero lg:max-w-7xl px-7 xl:px-0 py-10 lg:pb-24 lg:pt-0 m-auto text-kale text-base lg:text-xl flex flex-col lg:flex-row items-start justify-between">
                 <div class="lg:mt-20">
-                    <h1 class="text-mxl lg:text-7xl font-medium font-heading mt-4 lg:mt-9 mb-5 lg:mb-9 lg:max-w-2xl lg:pr-8">Please review our documentation</h1>
+                    <h1 class="text-mxl lg:text-7xl font-medium font-heading mt-4 lg:mt-9 mb-5 lg:mb-9 lg:max-w-2xl lg:pr-8">Please review Instacart's documentation</h1>
         
                     <form id="petersform" class="signup-form max-w-2xl mt-12">
                         <div>
@@ -190,9 +190,22 @@
             console.log("Submit Success!") ;
             e.preventDefault();
 
-            window.location.replace('https://www.instacart.com/store');
+            window.location.replace('https://peterpriceironclad1.github.io/instacart2/');
         })
   
+   var custom_data = {};
+    
+    $(".custom-data").change(function(){
+      console.log(this.id);
+      custom_data[this.id] = this.value;
+      _ps('set', 'custom_data', custom_data );
+      _ps("send", "updated");
+  
+    });
+
+
+      _ps("create", "79db65c7-db4b-4bfb-b8bb-89b3c3202e65");
+      _ps("load", "embedded-wtv6nz4e", { container_selector: "contracts", signer_id_selector: "email" });
  
 
                     </script>
@@ -208,6 +221,14 @@
 
     .my-12 {
         margin-top: 0rem !important;
+    }
+
+    #ps-group-embedded-wtv6nz4e div.ps-contract-body {
+        background-color: white !important;
+    }
+
+    #ps-group-embedded-wtv6nz4e div.ps-contract-title {
+        display: none;
     }
 </style>
 
